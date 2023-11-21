@@ -18,10 +18,19 @@
 // create a background image for the home page
 .home-background {
   background-image: url(homepage.jpeg);
+  opacity: 0.6;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
   z-index: -1;
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }

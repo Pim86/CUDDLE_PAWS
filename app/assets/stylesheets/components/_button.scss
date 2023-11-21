@@ -1,39 +1,48 @@
 .btn-flat {
-  margin-left: 100px;
    color: white;
+   margin-top: 10px;
+   margin-bottom: 10px;
    padding: 8px 60px;
    border-radius: 10px;
    background: #F4BFBF;
  }
- .btn-flat:hover {
-   background: #F4BFBF;
-   opacity: 0.8;
-   color: rgb(0, 0, 0);
+
+ .btn-flat a {
+   color: white;
+   text-decoration: none;
+   font: 1.5rem 'Josefin Sans', sans-serif;
  }
 
- .btn-flat:hover::after {
-   content: "Let's Start";
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+ .btn-flat p {
+    color: white;
+    text-decoration: none;
+    font: 1.5rem 'Josefin Sans', sans-serif;
+    padding-bottom: 0%;
  }
 
- .btn-flat-2:hover::after {
-  content: "Login/Signup";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+//  .btn-flat:hover {
+//    background: #F4BFBF;
+//    opacity: 0.8;
+//    color: rgb(0, 0, 0);
+//  }
+
+//  .btn-1:hover::after {
+//    content: "Let's Start";
+//    top: 50%;
+//    left: 50%;
+//    transform: translate(-50%, -50%);
+//  }
+
+//  .btn-2:hover::after {
+//   content: "Login/Signup";
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+ .btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Optionally, you can use a specific height for vertical centering */
 }
-
-.btn-flat-2 {
-  margin-left: 100px;
-   color: white;
-   padding: 8px 60px;
-   border-radius: 10px;
-   background: #F4BFBF;
- }
- .btn-flat-2:hover {
-   background: #F4BFBF;
-   opacity: 0.8;
-   color: rgb(0, 0, 0);
- }

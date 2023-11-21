@@ -1,55 +1,17 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
-      </ul>
-    </div>
-  </div>
-</div>
 <div class="home-background">
   <div>
-    <h1 class="home-h-font">CuddlePaws</h1>
+    <h1 class="home-h-font mt-3">CuddlePaws</h1>
   </div>
   <div>
     <p class="home-p-font">Happiness is closer than you think!</p>
     <p class="home-p-font">Who do you want to cuddle today?</p>
   </div>
-  <div class>
+  <div class="home-btns">
     <button class="btn btn-flat">
-      <%= link_to pets_path do %><i class="fa fa-paw" aria-hidden="true"></i><% end %>
+      <%= link_to pets_path do %><i class="fa fa-paw" aria-hidden="true"><p>Let's start</p></i><% end %>
     </button>
-    <button class="btn btn-flat-2">
-      <%= link_to pets_path do %><i class="fa fa-paw" aria-hidden="true"></i><% end %>
+    <button class="btn btn-flat">
+      <%= link_to pets_path do %><i class="fa fa-paw" aria-hidden="true"><p>Login/Signup</p></i><% end %>
     </button>
-    <%# <%= button_to "pets list", pets_path, class: "btn" %>
-    <%# <%= button_to "Login/Signup", pets_path, class: "btn" %>
   </div>
 </div>
