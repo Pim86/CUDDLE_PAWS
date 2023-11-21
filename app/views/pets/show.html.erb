@@ -35,9 +35,14 @@
   </div>
 </div>
 
-<h1><%= @pet.name %></h1>
-
-<p><%= @pet.age %> <%= 'years old' %> </p>
-<p><%= @pet.description %> </p>
+<div class="card-pet-profile">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-pet-profile-infos">
+    <div>
+      <h2><%= @pet.name %></h2>
+      <p><%= @pet.description %></p>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Go back', pets_path %>
