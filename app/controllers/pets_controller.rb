@@ -1,10 +1,11 @@
 class PetsController < ApplicationController
+  before_action :find_pet, only: %i[show edit update destroy]
+
   def index
     @pets = Pet.all
   end
 
   def show
-    find_pet
     owner_id
   end
 
@@ -14,7 +15,6 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    find_pet
     @pet.destroy
     redirect_to pets_path
   end
@@ -31,12 +31,10 @@ class PetsController < ApplicationController
   end
 
   def edit
-    find_pet
     @users = User.all
   end
 
   def update
-    find_pet
     @pet.update(pet_params)
     redirect_to pets_path
   end
