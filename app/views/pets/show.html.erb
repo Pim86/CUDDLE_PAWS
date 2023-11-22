@@ -1,25 +1,22 @@
-
-<div class="flex-grow-1 container d-flex flex-column align-items-center justify-content-center">
-  <div class="d-flex flex-column align-items-center " >
-    <div class="card-pet-profile d-flex flex-column align-items-center pt-3">
-      <%= image_tag(@pet.image_url, class:"rounded" ) %>
+<div class="container d-flex flex-column align-items-center justify-content-center vh-100">
+  <div class="d-flex flex-column align-items-center">
+    <%= link_to pets_path, class: "btn btn-back me-auto" do %>
+      <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+      <i class="fa fa-paw" aria-hidden="true"></i>
+    <% end %>
+    <div class="card-pet-profile d-flex flex-column align-items-center pt-3" style="height: 400px; width: 350px;"> <!-- Set fixed height and width -->
+      <%= image_tag(@pet.image_url, class:"rounded-3") %>
       <div class="card-pet-profile-infos pt-3">
         <div>
-          <h2>Meet <%= @pet.name %></h2>
-          <p>Max is a bundle of energy and enthusiasm.
-          His vibrant personality is contagious, and he has an uncanny ability to lift the spirits of everyone around him.
-          Max is a social butterfly, always eager to meet new people and make furry friends.
-          Despite his high energy levels, he's also incredibly affectionate,
-          enjoying cuddle sessions after a day of play and activities.<%= @pet.description %></p>
+          <h2 class="pb-1 fs-4">Meet <%= @pet.name %></h2>
+          <p class="pt-1 m-0 fs-5">Age: <%= @pet.age %>years</p>
+          <p class="p-0 m-0 fs-5">Breed: <%= @pet.breed %></p>
+          <p class="p-0 m-0 fs-5"><%= @pet.description %></p>
         </div>
       </div>
-        <button class="btn btn-back ">
-          <%= link_to 'Select Pet!', new_user_session_path %> <i class="fa fa-paw" aria-hidden="true"></i>
-        </button>
-     </div>
+    </div>
   </div>
-
-  <button class="btn btn-back">
-    <%= link_to 'Go back', pets_path %> <i class="fa fa-paw" aria-hidden="true"></i>
-  </button>
+  <%= link_to new_user_session_path, class: "btn btn-back mt-3" do %>
+    Select Pet! <i class="fa fa-paw" aria-hidden="true"></i>
+  <% end %>
 </div>
