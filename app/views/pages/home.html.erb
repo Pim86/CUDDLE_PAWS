@@ -6,13 +6,14 @@
     <p class="home-p-font">Happiness is closer than you think!</p>
     <p class="home-p-font">Who do you want to cuddle today?</p>
   </div>
+
   <div class="d-flex flex-column m-auto home-btns px-5 justify-content-center">
     <%= link_to pets_path, class: "btn btn-flat fs-1" do %>
       <i class="fa fa-paw" aria-hidden="true"></i>
       <p>Let's start</p>
     <% end %>
 
-    <%= link_to pets_path, class: "btn btn-flat fs-1" do %>
+    <%= link_to new_user_session_path, class: "btn btn-flat fs-1" do %>
       <i class="fa fa-paw" aria-hidden="true"></i>
       <p>Login/Signup</p>
     <% end %>
