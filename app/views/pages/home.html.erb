@@ -6,12 +6,16 @@
     <p class="home-p-font">Happiness is closer than you think!</p>
     <p class="home-p-font">Who do you want to cuddle today?</p>
   </div>
-  <div class="home-btns">
-    <button class="btn btn-flat">
-      <%= link_to pets_path do %><i class="fa fa-paw" aria-hidden="true"><p>Let's start</p></i><% end %>
-    </button>
-    <button class="btn btn-flat">
-      <%= link_to new_user_registration_path do %><i class="fa fa-paw" aria-hidden="true"><p>Login/Signup</p></i><% end %>
-    </button>
+
+  <div class="d-flex flex-column m-auto home-btns px-5 justify-content-center">
+    <%= link_to pets_path, class: "btn btn-flat fs-1" do %>
+      <i class="fa fa-paw" aria-hidden="true"></i>
+      <p>Let's start</p>
+    <% end %>
+
+    <%= link_to new_user_registration_path, class: "btn btn-flat fs-1" do %>
+      <i class="fa fa-paw" aria-hidden="true"></i>
+      <p>Login/Signup</p>
+    <% end %>
   </div>
 </div>

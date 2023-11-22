@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :pets
-  resources :users, only: [:show]
+  resources :users, only: %i[show]
+  resources :bookings
 end
