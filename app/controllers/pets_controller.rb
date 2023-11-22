@@ -6,7 +6,6 @@ class PetsController < ApplicationController
   end
 
   def show
-    owner_id
   end
 
   def new
