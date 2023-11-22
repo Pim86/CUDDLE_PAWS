@@ -1,11 +1,11 @@
 class PetsController < ApplicationController
+  before_action :find_pet, only: %i[show edit update destroy]
+
   def index
     @pets = Pet.all
   end
 
   def show
-    find_pet
-    owner_id
   end
 
   def new
@@ -14,14 +14,13 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    find_pet
     @pet.destroy
     redirect_to pets_path
   end
 
   def create
     @pet = Pet.new(pet_params)
-    owner_id
+    @pet.owner = current_user
 
     if @pet.save
       redirect_to pets_path
@@ -31,12 +30,10 @@ class PetsController < ApplicationController
   end
 
   def edit
-    find_pet
     @users = User.all
   end
 
   def update
-    find_pet
     @pet.update(pet_params)
     redirect_to pets_path
   end
@@ -44,15 +41,11 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :breed, :age, :image_url, :description, :owner_id)
+    params.require(:pet).permit(:name, :species, :breed, :age, :image_url, :description)
   end
 
   # method to find pet by id
   def find_pet
     @pet = Pet.find(params[:id])
-  end
-
-  def owner_id
-    @owner = User.find(@pet.owner_id)
   end
 end

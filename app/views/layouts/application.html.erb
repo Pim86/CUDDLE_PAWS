@@ -11,8 +11,10 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" unless current_page?(root_path) %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
+    <div class="vh-100 d-flex flex-column">
+      <%= render "layouts/navbar" unless current_page?(root_path) %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>
