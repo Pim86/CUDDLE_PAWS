@@ -14,7 +14,7 @@
     <div class="row justify-content-center justify-content-md-between mb-3">
       <% @pets.each do |pet| %>
         <div class="col-12 col-sm-6 col-md-4 card-product">
-          <%= image_tag(pet.image_url) %>
+          <%= image_tag(pet.image_url || "paw_icon.png") %>
           <div class="card-product-infos">
             <h2><%= pet.name %></h2>
             <p><%= pet.age %> <%= 'years old' %> </p>
