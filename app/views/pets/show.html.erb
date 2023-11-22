@@ -1,3 +1,4 @@
+
 <div class="flex-grow-1 container d-flex flex-column align-items-center justify-content-center">
   <div class="d-flex flex-column align-items-center " >
     <div class="card-pet-profile d-flex flex-column align-items-center mt-5">
@@ -12,7 +13,10 @@
           enjoying cuddle sessions after a day of play and activities.<%= @pet.description %></p>
         </div>
       </div>
-    </div>
+        <button class="btn btn-back ">
+          <%= link_to 'Select Pet!', new_user_session_path %> <i class="fa fa-paw" aria-hidden="true"></i>
+        </button>
+     </div>
   </div>
 
   <button class="btn btn-back">

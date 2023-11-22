@@ -1,0 +1,13 @@
+<div class="">
+  <img src="/app/assets/images/homepage.jpeg"/>
+  <div class="">
+    <div>
+      <h2><%= @user.first_name %></h2>
+      <p><%= @user.last_name %></p>
+      <p><%= @user.address %></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Go back', root_path %>
+<%#= link_to user.first_name, user_path(userg) %>
