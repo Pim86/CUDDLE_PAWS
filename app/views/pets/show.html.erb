@@ -1,12 +1,21 @@
 
-<div class="card-pet-profile">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"/>
-  <div class="card-pet-profile-infos">
-    <div>
-      <h2><%= @pet.name %></h2>
-      <p><%= @pet.description %></p>
+<div>
+<div class="container d-flex flex-column align-items-center " >
+  <div class="card-pet-profile d-flex flex-column align-items-center mt-5">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"class="mt-2 rounded" />
+    <div class="card-pet-profile-infos pt-3">
+      <div>
+        <h2>Meet <%= @pet.name %></h2>
+        <p>Max is a bundle of energy and enthusiasm.
+        His vibrant personality is contagious, and he has an uncanny ability to lift the spirits of everyone around him.
+        Max is a social butterfly, always eager to meet new people and make furry friends.
+        Despite his high energy levels, he's also incredibly affectionate,
+        enjoying cuddle sessions after a day of play and activities.<%= @pet.description %></p>
+      </div>
     </div>
   </div>
 </div>
-
-<%= link_to 'Go back', pets_path %>
+<button class="btn btn-back">
+  <%= link_to 'Go back', pets_path %> <i class="fa fa-paw" aria-hidden="true"></i>
+</button>
+</div>
