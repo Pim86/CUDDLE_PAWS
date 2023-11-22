@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # byebug
+
     if @user.save
       redirect_to root_path
     else
