@@ -7,26 +7,28 @@
   </div>
 <% end %>
 
-
-<h1>Pets list!</h1>
+<div class="mr-2">
+<h1>Pets </h1>
 
 <div class="container py-5">
   <div class="row d-flex align-items-center justify-content-between mb-3">
     <% @pets.each do |pet| %>
-      <div class="col-12 col-sm-6 col-md-4 card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="col-12 col-sm-6 col-md-4 ml-5 card-product">
+        <%= image_tag(pet.image_url) %>
         <div class="card-product-infos">
           <h2><%= pet.name %></h2>
           <p><%= pet.age %> <%= 'years old' %> </p>
-          <p><%= pet.species.capitalize %></p>
           <p><%= pet.breed.capitalize %></p>
-          <p><%= pet.image_url %></p>
-          <p><%= pet.owner_id %> </p>
-          <%= link_to 'show pet', pet_path(pet) %>
+          <button class="btn btn-flat">
+            <%= link_to "#{pet.name}'s profile", pet_path(pet) %>
+          </button>
         </div>
       </div>
     <% end %>
   </div>
 </div>
 
-<%= link_to 'create a pet', new_pet_path %>
+<button class="btn btn-flat">
+  <%= link_to 'Add a new pet', new_pet_path %>
+</button>
+</div>
