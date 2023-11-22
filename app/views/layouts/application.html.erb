@@ -11,6 +11,8 @@
   </head>
 
   <body>
+    <%= render "layouts/navbar" unless current_page?(root_path) %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
