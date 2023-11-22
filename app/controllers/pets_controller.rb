@@ -21,7 +21,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-    owner_id
+    @pet.owner = current_user
 
     if @pet.save
       redirect_to pets_path
@@ -42,15 +42,11 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :breed, :age, :image_url, :description, :owner_id)
+    params.require(:pet).permit(:name, :species, :breed, :age, :image_url, :description)
   end
 
   # method to find pet by id
   def find_pet
     @pet = Pet.find(params[:id])
-  end
-
-  def owner_id
-    @owner = User.find(@pet.owner_id)
   end
 end
