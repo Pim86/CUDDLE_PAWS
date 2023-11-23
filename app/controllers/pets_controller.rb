@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create destroy edit update]
   before_action :find_pet, only: %i[show edit update destroy]
 
   def index
@@ -12,7 +13,7 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
-    @users = User.all
+    @user = current_user
   end
 
   def destroy
