@@ -5,7 +5,7 @@
       <i class="fa fa-paw" aria-hidden="true"></i>
     <% end %>
     <div class="card-pet-profile d-flex flex-column align-items-center pt-3" style="height: 600px; width: 350px;"> <!-- fixed height and width -->
-      <%= image_tag(@pet.image_url, class:"mt-2", style: "border-radius: 20px;" ) %>
+      <%= image_tag(@pet.image_url  || "homepage.jpeg", class:"mt-2", style: "border-radius: 20px;" ) %>
       <div class="card-pet-profile-infos pt-3 ">
         <div>
           <h2 class="pb-1 fs-4 mt-3">Meet <%= @pet.name %></h2>
@@ -16,7 +16,12 @@
       </div>
     </div>
   </div>
-  <%= link_to new_user_session_path, class: "btn btn-back mt-3" do %>
-    Select Pet! <i class="fa fa-paw" aria-hidden="true"></i>
-  <% end %>
+  <div class="d-flex flex-row gap-3">
+    <%= link_to new_user_session_path, class: "btn btn-back mt-3" do %>
+      Select Pet! <i class="fa fa-paw" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to pet_path(@pet.id), data: { turbo_method: 'delete' }, class: "btn btn-back mt-3" do %>
+      Delete <i class="fa fa-paw" aria-hidden="true"></i>
+    <% end %>
+  </div>
 </div>
