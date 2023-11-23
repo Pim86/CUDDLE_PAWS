@@ -24,6 +24,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.owner = current_user
 
+    raise
     if @pet.save
       redirect_to pets_path
     else
