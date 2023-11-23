@@ -1,0 +1,21 @@
+.form {
+  margin: 0 auto;
+  max-width: 600px;
+  height: 100%;
+  padding: 1em;
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.drop-down .select.input select {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}

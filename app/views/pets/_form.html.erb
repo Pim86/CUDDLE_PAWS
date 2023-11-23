@@ -4,7 +4,9 @@
 
   <div>
     <%= f.input :name %>
-    <%= f.input :species %>
+    <div class="drop-down">
+    <%= f.input :species, as: :select, collection: ['cats', 'dogs'], prompt: 'Select species' %>
+    </div>
     <%= f.input :breed %>
     <%= f.input :age %>
     <%= f.input :image_url, as: :file %>
