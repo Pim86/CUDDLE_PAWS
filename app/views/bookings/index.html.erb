@@ -4,6 +4,8 @@
   <%= booking.user.full_name %>
   <%= booking.start_date_time %>
   <%= booking.end_date_time %>
+
+  <%= link_to 'Show', booking_path(booking) %>
 <% end %>
 
 <div class="text-center mt-3">
