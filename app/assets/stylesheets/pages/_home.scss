@@ -3,22 +3,23 @@
   font-family: 'Josefin Sans', sans-serif;
   font-size: 4rem;
   font-weight: 200;
-  color: #333333;
+  color: white;
   text-align: center;
+  margin-top: 20vh;
 }
 
 .home-p-font {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 200;
-  color: #333333;
+  color: white;
   text-align: center;
 }
 
 // create a background image for the home page
 .home-background {
-  background-image: url(homepage.jpeg);
-  opacity: 0.6;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)),
+  url(home-page.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,10 +27,26 @@
   width: 100%;
 }
 
-.home-btns {
-  height: 50vh;
+.home-btn-flat {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px 60px;
+  border-radius: 30px;
+  height: 50%;
+  background: #F4BFBF;
 }
 
-//.container-show {
-//  height: 80vh;
-//}
+.home-btn-flat a {
+  color: white;
+  text-decoration: none;
+  font: 1.5rem 'Josefin Sans', sans-serif;
+}
+
+.home-btn-flat p {
+   color: white;
+   text-decoration: none;
+   font: 1.5rem 'Josefin Sans', sans-serif;
+   padding-bottom: 0%;
+   margin-bottom: revert;
+}
