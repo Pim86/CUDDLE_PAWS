@@ -38,6 +38,14 @@ class PetsController < ApplicationController
     redirect_to pets_path
   end
 
+  def cats
+    @pets = Pet.where(species: "cat")
+  end
+
+  def dogs
+    @pets = Pet.where(species: "dog")
+  end
+
   private
 
   def pet_params

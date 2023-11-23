@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :pets
   resources :users, only: %i[show]
   resources :bookings
+
+  get "/cats", to: "pets#cats", as: :cats
+  get "/dogs", to: "pets#dogs", as: :dogs
 end
