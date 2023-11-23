@@ -1,39 +1,40 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
   before_action :find_booking, only: %i[show edit update destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def show
-    pet_id
-    user_id
   end
 
   def new
     @booking = Booking.new
-    @pets = Pet.all
+    @pet = Pet.find(params[:pet_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    pet_id
-    user_id
-
+    @booking.user = current_user
+    @pet = Pet.find(params[:pet_id])
+    @booking.pet = @pet
     if @booking.save
       redirect_to bookings_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @pets = Pet.all
   end
 
   def update
-    @booking.update(booking_params)
-    redirect_to bookings_path
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -44,7 +45,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :pet_id, :user_id)
+    params.require(:booking).permit(:start_date_time, :end_date_time, :pet_id, :user_id)
   end
 
   def find_booking

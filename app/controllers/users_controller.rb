@@ -1,20 +1,20 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
+  def edit
+    @user = current_user
   end
 
-  def create
-    @user = User.new(user_params)
+  def update
+    @user = current_user
 
-    if @user.save
-      redirect_to root_path
+    if @user.update(user_params)
+      redirect_to profile_path
     else
-      render :new
+      render :edit
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   private
