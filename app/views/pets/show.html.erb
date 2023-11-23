@@ -4,12 +4,12 @@
       <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
       <i class="fa fa-paw" aria-hidden="true"></i>
     <% end %>
-    <div class="card-pet-profile d-flex flex-column align-items-center pt-3" style="height: 400px; width: 350px;"> <!-- Set fixed height and width -->
+    <div class="card-pet-profile d-flex flex-column align-items-center pt-3" style="height: 600px; width: 350px;"> <!-- fixed height and width -->
       <%= image_tag(@pet.image_url, class:"rounded-3") %>
-      <div class="card-pet-profile-infos pt-3">
+      <div class="card-pet-profile-infos pt-3 ">
         <div>
           <h2 class="pb-1 fs-4">Meet <%= @pet.name %></h2>
-          <p class="pt-1 m-0 fs-5">Age: <%= @pet.age %>years</p>
+          <p class="pt-1 m-0 fs-5">Age: <%= @pet.age %> years</p>
           <p class="p-0 m-0 fs-5">Breed: <%= @pet.breed %></p>
           <p class="p-0 m-0 fs-5"><%= @pet.description %></p>
         </div>

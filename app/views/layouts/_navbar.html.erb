@@ -1,40 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <div class='container d-flex flex-row justify-content-center'>
-        <%= image_tag("paw_icon.png") %>
-        <p class='mb-0 ms-3'><strong>CuddlePaws</strong></p>
-      </div>
-      <%# <%= image_tag "/app/assets/images/paw_icon.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Pets", pets_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
-      </ul>
-    </div>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon position-sticky bottom-0 pt-4 pb-4">
+  <div class="d-flex justify-content-between w-100 px-4">
+    <i class="fa-solid fa-paw fa-xl px-3" style="color: #8CC0DE;"></i>
+    <i class="fa-solid fa-user fa-xl px-3" style="color: #8CC0DE;"></i>
+    <i class="fa-solid fa-calendar fa-xl px-3" style="color: #8CC0DE;"></i>
+    <i class="fa-solid fa-house fa-xl px-3" style="color: #8CC0DE;"></i>
   </div>
 </div>
