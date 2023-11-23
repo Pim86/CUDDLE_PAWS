@@ -65,3 +65,29 @@
   align-items: center;
   height: 50vh; /* Optionally, you can use a specific height for vertical centering */
 }
+
+.btn-filter {
+  color: #b8b8b8;
+  border: 1px solid #CCE1F4;
+  border-radius: 40px;
+  background: white;
+  padding: 8px 20px;
+  margin: 5px;
+  overflow: hidden;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.btn-content {
+  display: inline-block;
+}
+
+.btn-image {
+  vertical-align: middle; /* Align the image vertically in the middle with the text */
+}
+
+.btn-filter-text {
+  display: inline-block;
+  vertical-align: middle; /* Align the text vertically in the middle with the image */
+  margin-left: 5px; /* Add some spacing between the image and text if needed */
+}

@@ -6,6 +6,8 @@ class PetsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @user = User.find(@pet.owner_id)
   end
 
   def new
@@ -36,6 +38,14 @@ class PetsController < ApplicationController
   def update
     @pet.update(pet_params)
     redirect_to pets_path
+  end
+
+  def cats
+    @pets = Pet.where(species: "cat")
+  end
+
+  def dogs
+    @pets = Pet.where(species: "dog")
   end
 
   private
