@@ -1,21 +1,15 @@
-<div class="home-background">
-  <div>
-    <h1 class="home-h-font mt-5">CuddlePaws</h1>
-  </div>
-  <div >
-    <p class="home-p-font mt-5">Happiness is closer than you think!</p>
-    <p class="home-p-font">Who do you want to cuddle today?</p>
+<div class="home-background d-flex flex-column justify-content-center">
+  <div class="">
+    <div class="d-flex flex-column justify-content-center">
+      <h1 class="home-h-font mt-5">CuddlePaws</h1>
+      <p class="home-p-font">Peek now! Bond forever!</p>
+    </div>
   </div>
 
-  <div class="d-flex flex-column m-auto home-btns px-5 justify-content-center mt-5">
-    <%= link_to pets_path, class: "btn btn-flat fs-1 mt-5" do %>
+  <div class="d-flex flex-column mx-5 px-4">
+    <%= link_to pets_path, class: "btn home-btn-flat fs-1 mt-5" do %>
       <i class="fa fa-paw" aria-hidden="true"></i>
       <p>Let's start</p>
-    <% end %>
-
-    <%= link_to new_user_session_path, class: "btn btn-flat fs-1" do %>
-      <i class="fa fa-paw" aria-hidden="true"></i>
-      <p>Login/Signup</p>
     <% end %>
   </div>
 </div>
