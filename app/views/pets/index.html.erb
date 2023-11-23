@@ -14,7 +14,7 @@
     <% @pets.each do |pet| %>
       <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="card card-product">
-          <%= image_tag(pet.image_url || "paw_icon.png", class: "card-img-top") %>
+          <%= image_tag(pet.image_url || "homepage.jpeg", class: "card-img-top") %>
           <div class="card-body">
             <h2 class="card-title"><%= pet.name %></h2>
             <p class="card-text"><%= pet.age %> <%= 'years old' %></p>
