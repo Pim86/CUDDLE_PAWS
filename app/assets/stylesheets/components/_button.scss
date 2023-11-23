@@ -5,11 +5,13 @@
   border-radius: 10px;
   background: #F4BFBF;
 }
+
 .btn-back a{
   font-size: 13px;
   color: white;
    text-decoration: none;
    font-family:  'Josefin Sans', sans-serif;
+   font-weight: bold;
 }
 
 .btn-flat {
@@ -19,12 +21,14 @@
    padding: 8px 60px;
    border-radius: 10px;
    background: #F4BFBF;
+   font-weight: bold;
  }
 
  .btn-flat a {
    color: white;
    text-decoration: none;
    font: 1.5rem 'Josefin Sans', sans-serif;
+   font-weight: bold;
  }
 
  .btn-flat p {
@@ -32,6 +36,7 @@
     text-decoration: none;
     font: 1.5rem 'Josefin Sans', sans-serif;
     padding-bottom: 0%;
+    font-weight: bold;
  }
 
 //  .btn-flat:hover {
