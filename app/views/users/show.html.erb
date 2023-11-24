@@ -1,9 +1,10 @@
-    <div>
-      <h2><%= @user.first_name %></h2>
-      <p><%= @user.last_name %></p>
+<div class="container d-flex flex-column align-items-center justify-content-center vh-100">
+  <div class="d-flex flex-column align-items-center card-pet-profile pt-3" style="height: 600px; width: 350px;"">
+    <div class="h-100 d-flex flex-column align-items-center justify-content-center">
+      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <p><%= @user.address %></p>
+      <%= link_to 'Edit Profile', profile_edit_path, class: 'text-reset text-decoration-none' %>
+      <%= link_to 'Go back', root_path, class: 'text-reset text-decoration-none' %>
     </div>
-
-
-<%= link_to 'Edit Profile', profile_edit_path %>
-<%= link_to 'Go back', root_path %>
+  </div>
+</div>
