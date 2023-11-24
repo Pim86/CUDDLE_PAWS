@@ -1,9 +1,9 @@
-    <div>
-      <h2><%= @user.first_name %></h2>
-      <p><%= @user.last_name %></p>
-      <p><%= @user.address %></p>
-    </div>
-
-
-<%= link_to 'Edit Profile', profile_edit_path %>
-<%= link_to 'Go back', root_path %>
+<div class="container d-flex flex-column align-items-center justify-content-center vh-100">
+  <div class="">
+    <h2><%= @user.first_name %></h2>
+    <p><%= @user.last_name %></p>
+    <p><%= @user.address %></p>
+  </div>
+  <%= link_to 'Edit Profile', profile_edit_path %>
+  <%= link_to 'Go back', root_path %>
+</div>
