@@ -29,5 +29,12 @@ module CuddlePaws
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # config/application.rb or config/environments/production.rb
+    Cloudinary.config do |config|
+      config.cloudinary.cloud_name = 'duclm5uos'
+      config.cloudinary.api_key = '999484546278368'
+      config.cloudinary.api_secret = 'YbPefxr_gMNVxT8CTwAAZU1rWQ8'
+    end
   end
 end
