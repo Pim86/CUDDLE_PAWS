@@ -1,22 +1,15 @@
-<div class="form-inputs d-flex flex-column my-4 mx-3 form">
-  <%= simple_form_for(@user) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :email %>
-      <%= f.input :address %>
-      <%= f.input :password %>
-      <%= f.input :password_confirmation %>
-    </div>
+  <div class="form-inputs">
+    <%= f.input :full_name %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.input :address %>
 
-  <div class="btn btn-flat form-action">
-    <%= f.button :submit %>
-  </div>
-  <div>
-    <%= link_to 'cancel', profile_path %>
-  </div>
-  <% end %>
+<div class="btn btn-flat form-action">
+  <%= f.button :submit %>
 </div>
+<% end %>
