@@ -34,9 +34,7 @@
               <h2 class="card-title"><%= pet.name %></h2>
               <p class="card-text"><%= pet.age %> <%= 'years old' %></p>
               <p class="card-text"><%= pet.breed.capitalize %></p>
-              <button class="btn btn-flat">
-                <%= link_to "#{pet.name}'s pawfile", pet_path(pet) %>
-              </button>
+                <%= link_to "#{pet.name}'s pawfile", pet_path(pet), class: "btn btn-flat" %>
             </div>
           </div>
         </div>
