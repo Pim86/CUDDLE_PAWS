@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :pets
-  resources :users, only: %i[show]
+  resources :users, only: %i[show update]
   resources :bookings
 
   get "/cats", to: "pets#cats", as: :cats
