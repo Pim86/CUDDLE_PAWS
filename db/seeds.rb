@@ -29,27 +29,59 @@ puts 'creating pets...'
 
 # PETS
 # Seed cats and dogs
-dog_url = "https://dog.ceo/api/breeds/image/random/10"
-dog_doc = URI.open(dog_url).read
-dogs = JSON.parse(dog_doc)["message"]
+# dog_url = "https://dog.ceo/api/breeds/image/random/20"
+# dog_doc = URI.open(dog_url).read
+# dogs = JSON.parse(dog_doc)["message"]
 
-cat_url = "https://api.thecatapi.com/v1/images/search?limit=10"
-cat_doc = URI.open(cat_url).read
-cats = JSON.parse(cat_doc).map {|cat| cat["url"]}
+dog_images = [
+  "https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_2836.jpg",
+  "https://images.dog.ceo/breeds/maltese/n02085936_807.jpg",
+  "https://images.dog.ceo/breeds/whippet/n02091134_12476.jpg",
+  "https://images.dog.ceo/breeds/greyhound-italian/n02091032_5975.jpg",
+  "https://images.dog.ceo/breeds/retriever-flatcoated/n02099267_4303.jpg",
+  "https://images.dog.ceo/breeds/cattledog-australian/IMG_7057.jpg",
+  "https://images.dog.ceo/breeds/setter-gordon/n02101006_638.jpg",
+  "https://images.dog.ceo/breeds/puggle/IMG_041234.jpg",
+  "https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_2240.jpg",
+  "https://images.dog.ceo/breeds/poodle-toy/n02113624_8880.jpg"
+]
 
+# cat_url = "https://api.thecatapi.com/v1/images/search?limit=20"
+# cat_doc = URI.open(cat_url).read
+# cats = JSON.parse(cat_doc).map { |cat| cat["url"] }
 
-15.times do
+cat_images = [
+  "https://cdn2.thecatapi.com/images/24c.jpg",
+  "https://cdn2.thecatapi.com/images/34j.gif",
+  "https://cdn2.thecatapi.com/images/ba4.jpg",
+  "https://cdn2.thecatapi.com/images/d3a.jpg",
+  "https://cdn2.thecatapi.com/images/efk.jpg",
+  "https://cdn2.thecatapi.com/images/MTY1MjYzMA.jpg",
+  "https://cdn2.thecatapi.com/images/BbsNPAeop.jpg",
+  "https://cdn2.thecatapi.com/images/4mksJzUgG.png",
+  "https://cdn2.thecatapi.com/images/VGzO6r82_.jpg",
+  "https://cdn2.thecatapi.com/images/58mi0uCwO.jpg"
+]
+
+10.times do
   species = %w[cat dog].sample
 
-  Pet.create(
+  puts "Creating #{species}..."
+  pet = Pet.create!(
     name: species == "dog" ? Faker::Creature::Dog.name : Faker::Creature::Cat.name,
     species: species,
     breed: species == "dog" ? Faker::Creature::Dog.breed : Faker::Creature::Cat.breed,
     age: rand(1..15),
-    image_url: species == "dog" ? dogs.pop : cats.pop,
     owner_id: User.all.sample.id,
     description: Faker::Quote.famous_last_words
   )
+
+  image = species == "dog" ? dog_images.pop : cat_images.pop
+
+  puts "Uploading image #{image}"
+  file = URI.open(image)
+  pet.image.attach(io: file, filename: "#{pet.name}.png", content_type: "image/png")
+  pet.save!
 end
 
 puts 'finished!'

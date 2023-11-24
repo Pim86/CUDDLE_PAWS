@@ -51,7 +51,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :breed, :age, :image_url, :description)
+    params.require(:pet).permit(:name, :species, :breed, :age, :image, :description)
   end
 
   # method to find pet by id

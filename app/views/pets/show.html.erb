@@ -5,7 +5,7 @@
       <i class="fa fa-paw" aria-hidden="true"></i>
     <% end %>
     <div class="card-pet-profile d-flex flex-column align-items-center pt-3" style="height: 600px; width: 350px;"> <!-- fixed height and width -->
-      <%= cl_image_upload((:pet, :image_url) || "homepage.jpeg", class:"mt-2", style: "border-radius: 20px;") %>
+      <%= cl_image_tag(@pet.image.key || "default-pet-image.jpg", class:"mt-2", style: "border-radius: 20px;") %>
       <div class="card-pet-profile-infos pt-3 ">
         <div>
           <h2 class="pb-1 fs-4 mt-3">Meet <%= @pet.name %></h2>
