@@ -2,6 +2,7 @@
 <%= @booking.user.full_name%>
 <%= @booking.start_date_time%>
 <%= @booking.end_date_time%>
+<%= @booking.location%>
 <%= link_to 'Edit', edit_booking_path(@booking) %>
 <%= link_to 'Delete', booking_path(@booking),  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
 <%= link_to '<<', bookings_path %> <i class="fa fa-paw" aria-hidden="true"></i>
