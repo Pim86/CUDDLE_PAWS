@@ -1,7 +1,11 @@
-<%= render "form" %>
-
-<div>
-  <button class="btn btn-back">
-    <%= link_to '<<', pet_path(@pet) %> <i class="fa fa-paw" aria-hidden="true"></i>
-  </button>
+<div class="vh-100" style="overflow: hidden;">
+  <div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="text-center mx-auto">
+      <%= render "form" %>
+        <%= link_to  pet_path(@pet), class: "btn btn-back me-auto mt-5" do %>
+          <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+          <i class="fa fa-paw" aria-hidden="true"></i>
+        <% end %>
+    </div>
+  </div>
 </div>

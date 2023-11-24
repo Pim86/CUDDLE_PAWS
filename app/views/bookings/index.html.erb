@@ -1,15 +1,25 @@
-<h1>Bookings</h1>
-<% @bookings.each do |booking| %>
-  <%= booking.pet.name %>
-  <%= booking.user.full_name %>
-  <%= booking.start_date_time %>
-  <%= booking.end_date_time %>
+<div class= "vh-100">
 
-  <%= link_to 'Show', booking_path(booking) %>
-<% end %>
+  <div class="container">
+    <div class="d-flex align-items-center gap-4">
+      <%= link_to pets_path, class: "btn btn-back" do %>
+        <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+        <i class="fa fa-paw" aria-hidden="true"></i>
+      <% end %>
 
-<div class="text-center mt-3">
-  <button class="btn btn-flat">
-    <%= link_to 'Home', root_path %>
-  </button>
+      <h1 class="mb-0">My bookings</h1>
+    </div>
+
+    <% @bookings.each do |booking| %>
+     <div class="card-booking mt-3">
+        <h2 class="ms-3 mt-3 text-center"><%= booking.pet.name %></h2>
+        <p><%= booking.user.full_name %></p>
+          <div class="d-flex align-items-center gap-3 ms-3">
+            <i class="fa-solid fa-calendar fa-xs"></i>
+            <p class="mb-0"><%= booking.start_date_time %> <%= "to" %> <%= booking.end_date_time %></p>
+          </div>
+            <button class="btn btn-show mx-auto d-block"><%= link_to 'Show', booking_path(booking) %></button>
+    </div>
+      <% end %>
+  </div>
 </div>
