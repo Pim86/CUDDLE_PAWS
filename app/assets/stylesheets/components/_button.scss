@@ -27,7 +27,7 @@
  .btn-flat a {
    color: white;
    text-decoration: none;
-   font: 1.5rem 'Josefin Sans', sans-serif;
+   font: 1rem 'Josefin Sans', sans-serif;
    font-weight: bold;
  }
 
@@ -80,14 +80,15 @@
 
 .btn-content {
   display: inline-block;
+  font-style: bold;
 }
 
 .btn-image {
-  vertical-align: middle; /* Align the image vertically in the middle with the text */
+  vertical-align: middle;
 }
 
 .btn-filter-text {
   display: inline-block;
-  vertical-align: middle; /* Align the text vertically in the middle with the image */
-  margin-left: 5px; /* Add some spacing between the image and text if needed */
+  vertical-align: middle;
+  margin-left: 5px;
 }

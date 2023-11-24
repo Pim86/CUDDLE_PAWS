@@ -1,8 +1,8 @@
 <div class="mt-4">
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center m-1">
     <%= link_to pets_path, class: "btn-filter" do %>
       <div class="btn-content">
-        <%= image_tag("dog.png", alt: "Pets", class: "btn-image") %>
+        <%= image_tag("pets.png", alt: "Pets", class: "btn-image") %>
         <span class="btn-filter-text">All</span>
       </div>
     <% end %>
@@ -35,7 +35,7 @@
               <p class="card-text"><%= pet.age %> <%= 'years old' %></p>
               <p class="card-text"><%= pet.breed.capitalize %></p>
               <button class="btn btn-flat">
-                <%= link_to "#{pet.name}'s profile", pet_path(pet) %>
+                <%= link_to "#{pet.name}'s pawfile", pet_path(pet) %>
               </button>
             </div>
           </div>
