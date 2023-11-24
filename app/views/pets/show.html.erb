@@ -21,7 +21,7 @@
     <%= link_to new_pet_booking_path(@pet), class: "btn btn-back mt-3" do %>
       Select Pet! <i class="fa fa-paw" aria-hidden="true"></i>
     <% end %>
-    <%= link_to pet_path(@pet.id), data: { turbo_method: 'delete' }, class: "btn btn-back mt-3" do %>
+    <%= link_to pet_path(@pet.id), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }, class: "btn btn-back mt-3" do %>
       Delete <i class="fa fa-paw" aria-hidden="true"></i>
     <% end %>
   </div>
