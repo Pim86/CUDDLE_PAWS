@@ -29,5 +29,7 @@ module CuddlePaws
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # config/application.rb or config/environments/production.rb
   end
 end
